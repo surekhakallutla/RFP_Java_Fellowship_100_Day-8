@@ -13,27 +13,34 @@ public class EmployeeWage {
 		final int Present = 1;
 		final int Part_Time = 2;
 		final int WagePerHour = 20;
-		
-		employee();
+		int WorkingDays = 20;
+		int TotalEmpWage = 0;
 
-		
-		switch(employee())
+		for(int Day = 0; Day < WorkingDays; Day++)
 		{
-		case Present:
-			System.out.println("Employee is Present");
-			WorkingHour = 8;
-			break;
-		case Part_Time:
-			System.out.println("Employee is Part Timer");
-			WorkingHour = 4;
-			break;
-		default:
-			System.out.println("Employee is Absent");
-			WorkingHour = 0;
+			employee();
+			
+			switch(employee())
+			{
+			case Present:
+				System.out.println("Employee is Present");
+				WorkingHour = 8;
+				break;
+			case Part_Time:
+				System.out.println("Employee is Part Timer");
+				WorkingHour = 4;
+				break;
+			default:
+				System.out.println("Employee is Absent");
+				WorkingHour = 0;
+			}
+
+			Wage = WorkingHour * WagePerHour;
+			TotalEmpWage = TotalEmpWage + Wage;
+			System.out.println("Employee wage is "+ Wage);
 		}
 		
-		Wage = WorkingHour * WagePerHour;
-		System.out.println("Employee wage is "+ Wage);
+		System.out.println("Total Employee Wage is "+TotalEmpWage);
 	}
 
 	public static int employee()
@@ -45,4 +52,7 @@ public class EmployeeWage {
 	
 	}
 
+
 }
+
+
